@@ -1,51 +1,168 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Monodevelop-code-template-unity by anchan828</title>
+<!DOCTYPE html>
+<html ng-app="snippets-viewer">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/jquery-2.1.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/jszip.min.js"></script>
+</head>
+<body>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Monodevelop-code-template-unity</h1>
-        <p></p>
+<div class="container" ng-controller="snippetsCtrl">
+    <div class="col-md-9">
 
-        <p class="view"><a href="https://github.com/anchan828/monodevelop-code-template-unity">View the Project on GitHub <small>anchan828/monodevelop-code-template-unity</small></a></p>
+        <div>
+            <h4>Unity.template.xml</h4>
+            <a class="btn btn-primary" id="temp-download" ng-click="download()" download="Unity.template.xml" href="">Download</a>
+            <br/><br/>
+        </div>
+
+        <div class="panel panel-info snippet" ng-repeat="snippet in snippets" id="{{snippet.name}}">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{snippet.name}}</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#{{snippet.name}}-method" data-toggle="tab">Method</a></li>
+                    <li><a href="#{{snippet.name}}-xml" data-toggle="tab">XML</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="{{snippet.name}}-method">
+
+                        <div>
+                            <h3>Javascript</h3>
+                    <pre class="js"><span ng-show="{{snippet.isStatic}}">static </span>{{convertType("js",snippet.returnType)}} {{snippet.name}} (<span
+                            ng-repeat="arg in snippet.args">{{arg.name}}: {{convertType("js",arg.type)}}<span
+                            ng-hide="{{$last}}">, </span></span>){
+    $selected$$end$
+}</pre>
+                        </div>
+                        <div>
+                            <h3>C#</h3>
+                    <pre class="cs"><span ng-show="{{snippet.isStatic}}">static </span>{{snippet.returnType}} {{snippet.name}} (<span
+                            ng-repeat="arg in snippet.args">{{arg.type}} {{arg.name}}<span
+                            ng-hide="{{$last}}">, </span></span>){
+    $selected$$end$
+}</pre>
+                        </div>
+                        <div>
+                            <h3>Boo</h3>
+                    <pre class="boo"><span ng-show="{{snippet.isStatic}}">static </span>def {{snippet.name}} (<span
+                            ng-repeat="args in snippet.args">{{convertType("boo",args.type)}} {{args.name}}<span
+                            ng-hide="{{$last}}">, </span></span>) as {{convertType("boo",snippet.returnType)}}:</pre>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="{{snippet.name}}-xml">
+                        <div>
+                            <h3>Javascript</h3>
+                    <pre class="js">&lt;CodeTemplate version="2.0"&gt;
+    &lt;Header&gt;
+      &lt;_Group&gt;UnityJS&lt;/_Group&gt;
+      &lt;MimeType&gt;text/x-unityscript&lt;/MimeType&gt;
+      &lt;Version&gt;1.0&lt;/Version&gt;
+      &lt;_Description&gt;Message&lt;/_Description&gt;
+      &lt;TemplateType&gt;SurroundsWith,Expansion&lt;/TemplateType&gt;
+      &lt;Shortcut&gt;{{snippet.name}}&lt;/Shortcut&gt;
+    &lt;/Header&gt;
+    <span ng-if="!snippet.args">&lt;Variables/&gt;</span><span ng-repeat="arg in snippet.args"><span ng-show="$first">&lt;Variables&gt;
+    </span>    &lt;Variable name="name{{$index}}"&gt;
+            &lt;Default&gt;{{arg.name}}&lt;/Default&gt;
+        &lt;/Variable&gt;
+    <span ng-show="$last">&lt;/Variables&gt;</span></span>
+    &lt;Code&gt;&lt;![CDATA[<span ng-show="{{snippet.isStatic}}">static </span>{{convertType("js",snippet.returnType)}} {{snippet.name}} (<span
+                                ng-repeat="arg in snippet.args">$name{{$index}}$: {{convertType("js",arg.type)}}<span
+                                ng-hide="{{$last}}">, </span></span>){
+    $selected$$end$
+}]]&gt;&lt;/Code&gt;
+&lt;/CodeTemplate&gt;</pre>
+                        </div>
+                        <div>
+                            <h3>C#</h3>
+                    <pre class="cs">&lt;CodeTemplate version="2.0"&gt;
+    &lt;Header&gt;
+      &lt;_Group&gt;UnityC#&lt;/_Group&gt;
+      &lt;MimeType&gt;text/x-csharp&lt;/MimeType&gt;
+      &lt;Version&gt;1.0&lt;/Version&gt;
+      &lt;_Description&gt;Message&lt;/_Description&gt;
+      &lt;TemplateType&gt;SurroundsWith,Expansion&lt;/TemplateType&gt;
+      &lt;Shortcut&gt;{{snippet.name}}&lt;/Shortcut&gt;
+    &lt;/Header&gt;
+    <span ng-if="!snippet.args">&lt;Variables/&gt;</span><span ng-repeat="arg in snippet.args"><span ng-show="$first">&lt;Variables&gt;
+    </span>    &lt;Variable name="name{{$index}}"&gt;
+            &lt;Default&gt;{{arg.name}}&lt;/Default&gt;
+        &lt;/Variable&gt;
+    <span ng-show="$last">&lt;/Variables&gt;</span></span>
+    &lt;Code&gt;&lt;![CDATA[<span ng-show="{{snippet.isStatic}}">static </span>{{snippet.returnType}} {{snippet.name}} (<span
+                                ng-repeat="arg in snippet.args">{{arg.type}} $name{{$index}}$<span
+                                ng-hide="{{$last}}">, </span></span>){
+    $selected$$end$
+}]]&gt;&lt;/Code&gt;
+&lt;/CodeTemplate&gt;</pre>
+                        </div>
+                        <div>
+                            <h3>Boo</h3>
+                    <pre class="boo">&lt;CodeTemplate version="2.0"&gt;
+    &lt;Header&gt;
+      &lt;_Group&gt;UnityBoo&lt;/_Group&gt;
+      &lt;MimeType&gt;text/x-boo&lt;/MimeType&gt;
+      &lt;Version&gt;1.0&lt;/Version&gt;
+      &lt;_Description&gt;Message&lt;/_Description&gt;
+      &lt;TemplateType&gt;SurroundsWith,Expansion&lt;/TemplateType&gt;
+      &lt;Shortcut&gt;{{snippet.name}}&lt;/Shortcut&gt;
+    &lt;/Header&gt;
+    <span ng-if="!snippet.args">&lt;Variables/&gt;</span><span ng-repeat="arg in snippet.args"><span ng-show="$first">&lt;Variables&gt;
+    </span>    &lt;Variable name="name{{$index}}"&gt;
+            &lt;Default&gt;{{arg.name}}&lt;/Default&gt;
+        &lt;/Variable&gt;
+    <span ng-show="$last">&lt;/Variables&gt;</span></span>
+    &lt;Code&gt;&lt;![CDATA[<span ng-show="{{snippet.isStatic}}">static </span>def {{snippet.name}} (<span
+                                ng-repeat="args in snippet.args">{{convertType("boo",args.type)}} $name{{$index}}$<span
+                                ng-hide="{{$last}}">, </span></span>) as {{convertType("boo",snippet.returnType)}}:]]&gt;&lt;/Code&gt;
+&lt;/CodeTemplate&gt;</pre>
+                        </div>
 
 
-        <ul>
-          <li><a href="https://github.com/anchan828/monodevelop-code-template-unity/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/anchan828/monodevelop-code-template-unity/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/anchan828/monodevelop-code-template-unity">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="monodevelop-code-template-unity" class="anchor" href="#monodevelop-code-template-unity"><span class="octicon octicon-link"></span></a>monodevelop-code-template-unity</h1>
 
-<h2>
-<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
 
-<pre><code>Mac                 ~/Library/MonoDevelop-{version}/Snippets/
-Windows             ~/AppData/Roaming/MonoDevelop-{version}/Snippets/
-</code></pre>
 
-<p><img src="https://dl.dropboxusercontent.com/u/153254465/screenshot/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202014-01-24%2014.10.42.png" alt=""></p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/anchan828">anchan828</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+    <div class="col-md-3">
+        <div class="sidenav affix pre-scrollable" style="max-height: 100%" role="complementary">
+            <ul class="nav">
+                <li>
+                    <a href="#UnityEngine">UnityEngine</a>
+                    <ul class="nav">
+                        <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEngine'}"><a
+                                href="#{{snippet.name}}">{{snippet.name}}</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#UnityEditor">UnityEditor</a>
+                    <ul class="nav">
+                        <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEditor'}"><a
+                                href="#{{snippet.name}}">{{snippet.name}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a class="back-to-top" href="#">
+                Back to top
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>
