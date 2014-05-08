@@ -1,773 +1,853 @@
-{
-    "methods": [
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "Awake",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "FixedUpdate",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "LateUpdate",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnAnimatorIK",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "int",
-                    "name": "layerIndex"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnAnimatorMove",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnApplicationFocus",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "bool",
-                    "name": "focusStatus"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnApplicationPause",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "bool",
-                    "name": "pauseStatus"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnApplicationQuit",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnAudioFilterRead",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "float[]",
-                    "name": "data"
-                },
-                {
-                    "type": "int",
-                    "name": "channels"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnBecameInvisible",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnBecameVisible",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnCollisionEnter",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collision",
-                    "name": "collision"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnCollisionEnter2D",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collision2D",
-                    "name": "collision2D"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnCollisionExit",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collision",
-                    "name": "collision"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnCollisionExit2D",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collision2D",
-                    "name": "collision2D"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnCollisionStay",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collision",
-                    "name": "collision"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnCollisionStay2D",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collision2D",
-                    "name": "collision2D"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnConnectedToServer",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnControllerColliderHit",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "ControllerColliderHit",
-                    "name": "hit"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnDestroy",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnDisable",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnDisconnectedFromServer",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "NetworkDisconnection",
-                    "name": "info"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnDrawGizmos",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnDrawGizmosSelected",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnEnable",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnFailedToConnect",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "NetworkConnectionError",
-                    "name": "error"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnFailedToConnectToMasterServer",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "NetworkConnectionError",
-                    "name": "info"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnGUI",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnJointBreak",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "float",
-                    "name": "breakForce"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnLevelWasLoaded",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "int",
-                    "name": "level"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnMasterServerEvent",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "MasterServerEvent",
-                    "name": "msEvent"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnMouseDown",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnMouseDrag",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnMouseEnter",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnMouseExit",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnMouseOver",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnMouseUp",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnMouseUpAsButton",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnNetworkInstantiate",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "NetworkMessageInfo",
-                    "name": "info"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnParticleCollision",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "GameObject",
-                    "name": "other"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnPlayerConnected",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "NetworkPlayer",
-                    "name": "player"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnPlayerDisconnected",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "NetworkPlayer",
-                    "name": "player"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnPostRender",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnPreCull",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnPreRender",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnRenderImage",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "RenderTexture",
-                    "name": "src"
-                },
-                {
-                    "type": "RenderTexture",
-                    "name": "dest"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnRenderObject",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnSerializeNetworkView",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "BitStream",
-                    "name": "stream"
-                },
-                {
-                    "type": "NetworkMessageInfo",
-                    "name": "info"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnServerInitialized",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnTriggerEnter",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collider",
-                    "name": "other"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnTriggerEnter2D",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collider2D",
-                    "name": "other"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnTriggerExit",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collider",
-                    "name": "other"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnTriggerExit2D",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collider2D",
-                    "name": "other"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnTriggerStay",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collider",
-                    "name": "other"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnTriggerStay2D",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Collider2D",
-                    "name": "other"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnValidate",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "OnWillRenderObject",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "Reset",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "Start",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEngine",
-            "name": "Update",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnAssignMaterialModel",
-            "returnType": "Material",
-            "args": [
-                {
-                    "type": "Material",
-                    "name": "material"
-                },
-                {
-                    "type": "Renderer",
-                    "name": "renderer"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnHierarchyChange",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnInspectorUpdate",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnLostFocus",
-            "returnType": "void"
-        },
-        {
-            "isStatic": true,
-            "namespace": "UnityEditor",
-            "name": "OnPostprocessAllAssets",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "string[]",
-                    "name": "importedAssets"
-                },
-                {
-                    "type": "string[]",
-                    "name": "deletedAssets"
-                },
-                {
-                    "type": "string[]",
-                    "name": "movedAssets"
-                },
-                {
-                    "type": "string[]",
-                    "name": "movedFromPath"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnPostprocessAudio",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "AudioClip",
-                    "name": "clip"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnPostprocessGameObjectWithUserProperties",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "GameObject",
-                    "name": "root"
-                },
-                {
-                    "type": "string[]",
-                    "name": "propNames"
-                },
-                {
-                    "type": "object[]",
-                    "name": "values"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnPostprocessModel",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "GameObject",
-                    "name": "root"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnPostprocessTexture",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "Texture2D",
-                    "name": "texture"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnPreprocessAudio",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnPreprocessModel",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnPreprocessTexture"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnProjectChange",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnSceneGUI",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnSelectionChange",
-            "returnType": "void"
-        },
-        {
-            "isStatic": true,
-            "namespace": "UnityEditor",
-            "name": "OnWillCreateAsset",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "string",
-                    "name": "path"
-                }
-            ]
-        },
-        {
-            "isStatic": true,
-            "namespace": "UnityEditor",
-            "name": "OnWillDeleteAsset",
-            "returnType": "AssetDeleteResult",
-            "args": [
-                {
-                    "type": "string",
-                    "name": "assetPath"
-                },
-                {
-                    "type": "RemoveAssetOptions",
-                    "name": "option"
-                }
-            ]
-        },
-        {
-            "isStatic": true,
-            "namespace": "UnityEditor",
-            "name": "OnWillMoveAsset",
-            "returnType": "AssetMoveResult",
-            "args": [
-                {
-                    "type": "string",
-                    "name": "oldPath"
-                },
-                {
-                    "type": "string",
-                    "name": "newPath"
-                }
-            ]
-        },
-        {
-            "isStatic": true,
-            "namespace": "UnityEditor",
-            "name": "OnWillSaveAssets",
-            "returnType": "void",
-            "args": [
-                {
-                    "type": "string[]",
-                    "name": "paths"
-                }
-            ]
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnWizardCreate",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnWizardOtherButton",
-            "returnType": "void"
-        },
-        {
-            "isStatic": false,
-            "namespace": "UnityEditor",
-            "name": "OnWizardUpdate",
-            "returnType": "void"
-        }
-    ]
-}
+{"methods": [
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "Awake",
+        "returnType": "void",
+        "guid": "257B7505C458EDF829B68A50A3F11BE1"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "FixedUpdate",
+        "returnType": "void",
+        "guid": "24F78A5D428BEA3F4D6C8B3C7B529EE4"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "LateUpdate",
+        "returnType": "void",
+        "guid": "92C6B353205FCEFF30A56B3C534CC1B2"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnAnimatorIK",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "int",
+                "name": "layerIndex"
+            }
+        ],
+        "guid": "D9AB1CCCB9FDABE4913FB1CC1ACBA57E"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnAnimatorMove",
+        "returnType": "void",
+        "guid": "AE362A9A0AEDEAAE30F9DEC8EF6FC02C"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnApplicationFocus",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "bool",
+                "name": "focusStatus"
+            }
+        ],
+        "guid": "476EC8438A4DFA03B6B2DD27CFB7B300"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnApplicationPause",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "bool",
+                "name": "pauseStatus"
+            }
+        ],
+        "guid": "0CEAFC937C4C733852E0A7005E1B53CB"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnApplicationQuit",
+        "returnType": "void",
+        "guid": "27280585055034DA7E15A7B1C4380FF9"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnAudioFilterRead",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "float[]",
+                "name": "data"
+            },
+            {
+                "type": "int",
+                "name": "channels"
+            }
+        ],
+        "guid": "530FA623BF6B62DDF61C202CA94BFB63"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnBecameInvisible",
+        "returnType": "void",
+        "guid": "E4B6690DA8B266BC404599CA5D750736"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnBecameVisible",
+        "returnType": "void",
+        "guid": "CF858667B7E3C77C2D416440C8DECA11"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnCollisionEnter",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collision",
+                "name": "collision"
+            }
+        ],
+        "guid": "7F722089767288449ECA5688ADCE152E"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnCollisionEnter2D",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collision2D",
+                "name": "collision2D"
+            }
+        ],
+        "guid": "F8E4904BBED0250B4B5FF253EB763546"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnCollisionExit",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collision",
+                "name": "collision"
+            }
+        ],
+        "guid": "DB2D95E71AA3768F9C9CBC2A1D94758B"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnCollisionExit2D",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collision2D",
+                "name": "collision2D"
+            }
+        ],
+        "guid": "1EEABD70E00EFC1F5F379B2397CF19B0"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnCollisionStay",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collision",
+                "name": "collision"
+            }
+        ],
+        "guid": "B6041AAD494D289D02EDE2208EF0F7FC"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnCollisionStay2D",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collision2D",
+                "name": "collision2D"
+            }
+        ],
+        "guid": "025601BB8582A4BDFBD6F404D7BBDEE4"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnConnectedToServer",
+        "returnType": "void",
+        "guid": "EC8A246FD903194B9EEDF9DA4DE969F3"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnControllerColliderHit",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "ControllerColliderHit",
+                "name": "hit"
+            }
+        ],
+        "guid": "9FCC3DD6F4A43F612EF75E43597B1EE3"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnDestroy",
+        "returnType": "void",
+        "guid": "C1F6C0D283A621A9C4BE4760E23B2941"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnDisable",
+        "returnType": "void",
+        "guid": "E7B50A15E590EE5FEB004D76553C0555"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnDisconnectedFromServer",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "NetworkDisconnection",
+                "name": "info"
+            }
+        ],
+        "guid": "AFF9BDD531C5B393DD93EBC4EF0BE1E7"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnDrawGizmos",
+        "returnType": "void",
+        "guid": "EC2D37099B4378BBC725D9AEF47408A5"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnDrawGizmosSelected",
+        "returnType": "void",
+        "guid": "4DAEB3572A9F7140B5222F75A0D65851"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnEnable",
+        "returnType": "void",
+        "guid": "1A8925893F4FF066724CA5D379D14D6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnFailedToConnect",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "NetworkConnectionError",
+                "name": "error"
+            }
+        ],
+        "guid": "B344DE5A681580F4A57965CD9BD0D632"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnFailedToConnectToMasterServer",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "NetworkConnectionError",
+                "name": "info"
+            }
+        ],
+        "guid": "3263C83C90C88B9C527A3D2713C67913"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnGUI",
+        "returnType": "void",
+        "guid": "2AB6CAB8E3A0D825687C3740CC62AE89"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnJointBreak",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "float",
+                "name": "breakForce"
+            }
+        ],
+        "guid": "59E5C36FEF1F6A3C2768E40762A3D457"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnLevelWasLoaded",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "int",
+                "name": "level"
+            }
+        ],
+        "guid": "B1777A4B54E6173F5F8BC7261A0993F0"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnMasterServerEvent",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "MasterServerEvent",
+                "name": "msEvent"
+            }
+        ],
+        "guid": "A5329F3116A01F039B728CD729CE2053"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnMouseDown",
+        "returnType": "void",
+        "guid": "501BE03E3FD3F27980A47DBFC23DA72C"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnMouseDrag",
+        "returnType": "void",
+        "guid": "C1D46BF0ABFBE5332D46D16EE94DFB91"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnMouseEnter",
+        "returnType": "void",
+        "guid": "C9FDFA0139B280276FDDD178C5A8B70F"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnMouseExit",
+        "returnType": "void",
+        "guid": "BCCB08F58C79CB589B8232F425D01205"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnMouseOver",
+        "returnType": "void",
+        "guid": "4170E076D8F41F097DE7CE2E0488A905"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnMouseUp",
+        "returnType": "void",
+        "guid": "6F2865487746B7C3D724B3E083DC2C83"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnMouseUpAsButton",
+        "returnType": "void",
+        "guid": "5767BB702DCEB151B376EB26D56FE99F"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnNetworkInstantiate",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "NetworkMessageInfo",
+                "name": "info"
+            }
+        ],
+        "guid": "D9C14A443C7B1C50FB2DAEF16659A780"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnParticleCollision",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "GameObject",
+                "name": "other"
+            }
+        ],
+        "guid": "1409451D40934FF826F9E9A55562C947"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnPlayerConnected",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "NetworkPlayer",
+                "name": "player"
+            }
+        ],
+        "guid": "0CB53BB48EBF20046551E39E2D1D6274"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnPlayerDisconnected",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "NetworkPlayer",
+                "name": "player"
+            }
+        ],
+        "guid": "8688CCFB6D9D4CA4A4B46992AC3E92ED"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnPostRender",
+        "returnType": "void",
+        "guid": "96D3D3EA5BB7BC6DB9DF7B0809DB9B49"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnPreCull",
+        "returnType": "void",
+        "guid": "186842B439023A5B69609DA59BE6081A"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnPreRender",
+        "returnType": "void",
+        "guid": "73527254BDFBB8FBE913C8C63E0244BD"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnRenderImage",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "RenderTexture",
+                "name": "src"
+            },
+            {
+                "type": "RenderTexture",
+                "name": "dest"
+            }
+        ],
+        "guid": "87E7A2B1E1F5BE31E691C8F82E41C5AA"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnRenderObject",
+        "returnType": "void",
+        "guid": "184F560CF5531170EFD786532D520F86"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnSerializeNetworkView",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "BitStream",
+                "name": "stream"
+            },
+            {
+                "type": "NetworkMessageInfo",
+                "name": "info"
+            }
+        ],
+        "guid": "1869631D9FCBF48DF0FAE8E92279DFCA"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnServerInitialized",
+        "returnType": "void",
+        "guid": "DB26D1CB0805A7642B2065CC3252EB74"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnTriggerEnter",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collider",
+                "name": "other"
+            }
+        ],
+        "guid": "70FBADC17CA1107343538C09A12EFB79"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnTriggerEnter2D",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collider2D",
+                "name": "other"
+            }
+        ],
+        "guid": "04C9D547823C383394A3966EAB1F99B0"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnTriggerExit",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collider",
+                "name": "other"
+            }
+        ],
+        "guid": "3B66F680F70F0A6955AC2D137116FFE7"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnTriggerExit2D",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collider2D",
+                "name": "other"
+            }
+        ],
+        "guid": "270EF5A8B78B5D29DEB6F6EF17A78C21"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnTriggerStay",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collider",
+                "name": "other"
+            }
+        ],
+        "guid": "4619A58B5A36569EBD051A0B1FDFF3C2"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnTriggerStay2D",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Collider2D",
+                "name": "other"
+            }
+        ],
+        "guid": "336478DB964FFEA14BE9A94831728965"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnValidate",
+        "returnType": "void",
+        "guid": "200E2D9DDC6DCD0407F94D83B5DC01F8"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "OnWillRenderObject",
+        "returnType": "void",
+        "guid": "B9AD5619C23EE37FA2476D552D748370"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "Reset",
+        "returnType": "void",
+        "guid": "EA1C9D41DDE7515F6BDE87CEB521EE5E"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "Start",
+        "returnType": "void",
+        "guid": "961E75D49B2FF6A9804D3CF3A0D93237"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine",
+        "name": "Update",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnAssignMaterialModel",
+        "returnType": "Material",
+        "args": [
+            {
+                "type": "Material",
+                "name": "material"
+            },
+            {
+                "type": "Renderer",
+                "name": "renderer"
+            }
+        ],
+        "guid": "18B1B9497A8B2F545CFF02D1221F8788"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnHierarchyChange",
+        "returnType": "void",
+        "guid": "1C0BD2F5E9A6CCB7937C7F10BE2F3C3C"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnInspectorUpdate",
+        "returnType": "void",
+        "guid": "ABC33AAEADD22AEE76A5C37DDE71D652"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnLostFocus",
+        "returnType": "void",
+        "guid": "31173679408982194C771E5D618FA8A6"
+    },
+    {
+        "isStatic": true,
+        "namespace": "UnityEditor",
+        "name": "OnPostprocessAllAssets",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "string[]",
+                "name": "importedAssets"
+            },
+            {
+                "type": "string[]",
+                "name": "deletedAssets"
+            },
+            {
+                "type": "string[]",
+                "name": "movedAssets"
+            },
+            {
+                "type": "string[]",
+                "name": "movedFromPath"
+            }
+        ],
+        "guid": "0C19B37F3F7E32CA563EEDA775527455"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnPostprocessAudio",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "AudioClip",
+                "name": "clip"
+            }
+        ],
+        "guid": "C7EB0D7A28F851BA98E6CFEF3D30B92A"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnPostprocessGameObjectWithUserProperties",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "GameObject",
+                "name": "root"
+            },
+            {
+                "type": "string[]",
+                "name": "propNames"
+            },
+            {
+                "type": "object[]",
+                "name": "values"
+            }
+        ],
+        "guid": "DFF91FF96ACC1436C03DC7BFDDF81AA9"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnPostprocessModel",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "GameObject",
+                "name": "root"
+            }
+        ],
+        "guid": "36ED923C1C0C1D52E1E4DB90608B5EE3"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnPostprocessTexture",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "Texture2D",
+                "name": "texture"
+            }
+        ],
+        "guid": "03EE99A36CDB26D1CA8B567DA8D66B33"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnPreprocessAudio",
+        "returnType": "void",
+        "guid": "F2664089B67F711D19DFC6098F9FBB76"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnPreprocessModel",
+        "returnType": "void",
+        "guid": "E9C14D65977215C65440B252668FB6E7"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnPreprocessTexture",
+        "guid": "7B1F72BE4E528B1036E6BDEC79BAEA6E"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnProjectChange",
+        "returnType": "void",
+        "guid": "779E663B3AB58E1600B457D284C4C2C0"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnSceneGUI",
+        "returnType": "void",
+        "guid": "2FC4AB9146421CD8E96F4419FD8FCF2B"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnSelectionChange",
+        "returnType": "void",
+        "guid": "B2FD36A04488BEC36FFE166E20E8D629"
+    },
+    {
+        "isStatic": true,
+        "namespace": "UnityEditor",
+        "name": "OnWillCreateAsset",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "string",
+                "name": "path"
+            }
+        ],
+        "guid": "8DB5204B30EE952F9D73B72B80315CA3"
+    },
+    {
+        "isStatic": true,
+        "namespace": "UnityEditor",
+        "name": "OnWillDeleteAsset",
+        "returnType": "AssetDeleteResult",
+        "args": [
+            {
+                "type": "string",
+                "name": "assetPath"
+            },
+            {
+                "type": "RemoveAssetOptions",
+                "name": "option"
+            }
+        ],
+        "guid": "728143B5FA820C224CBBF33D2A8125B3"
+    },
+    {
+        "isStatic": true,
+        "namespace": "UnityEditor",
+        "name": "OnWillMoveAsset",
+        "returnType": "AssetMoveResult",
+        "args": [
+            {
+                "type": "string",
+                "name": "oldPath"
+            },
+            {
+                "type": "string",
+                "name": "newPath"
+            }
+        ],
+        "guid": "F9ADA00F144CF16DBAF50D257226CE10"
+    },
+    {
+        "isStatic": true,
+        "namespace": "UnityEditor",
+        "name": "OnWillSaveAssets",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "string[]",
+                "name": "paths"
+            }
+        ],
+        "guid": "A3E3477742C92116B5F5EE0E48090CC9"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnWizardCreate",
+        "returnType": "void",
+        "guid": "AB3F5F6F21CE0BAA9AD74FB72083BCDD"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnWizardOtherButton",
+        "returnType": "void",
+        "guid": "E3CD605552B9C1F587E536D91D1D2248"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEditor",
+        "name": "OnWizardUpdate",
+        "returnType": "void",
+        "guid": "FD665734BD5B14CB62B72E234BC98306"
+    }
+]}

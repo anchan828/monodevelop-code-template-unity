@@ -4,7 +4,6 @@
 /// <reference path="jquery.d.ts" />
 /// <reference path="bootstrap.d.ts" />
 /// <reference path="angular.d.ts" />
-/// <reference path="jszip.d.ts" />
 'use strict';
 var app = angular.module('snippets-viewer', []);
 
@@ -19,9 +18,12 @@ app.controller('snippetsCtrl', function ($scope, $http) {
         }, 10);
     });
 
-    $http.get('xmlTemplate.html').success(function (text) {
-        $scope.xmlTemplate = text + "";
-    });
+    var uuid = function () {
+        var S4 = function () {
+            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+        };
+        return (S4() + S4() + S4() + S4() + S4() + S4() + S4() + S4());
+    };
 
     $scope.convertType = function (lang, type) {
         var result = type;
@@ -60,11 +62,11 @@ app.controller('snippetsCtrl', function ($scope, $http) {
         return result;
     };
 
-    $scope.download = function () {
+    $scope.monodevelopDownload = function () {
         var elements = $('.snippet');
         var xmlBody = "";
         elements.each(function (i, e) {
-            var _xml = $(e).find("#" + $(e).attr('id') + "-xml pre").text();
+            var _xml = $(e).find("#" + $(e).attr('id') + "-monodevelop pre").text();
             if (!$scope.snippets[i].isStatic) {
                 _xml = _xml.replace(/static /g, "");
             }
@@ -77,7 +79,47 @@ app.controller('snippetsCtrl', function ($scope, $http) {
                 xml += xmlBody;
                 xml += "</CodeTemplates>";
                 console.log(xml);
-                $("#temp-download").attr({ href: window.URL.createObjectURL(new Blob([xml])) });
+                $("#monodevelop-download").attr({ href: window.URL.createObjectURL(new Blob([xml])) });
+            }
+        });
+    };
+    $scope.vsDownload = function () {
+        var elements = $('.snippet');
+        var xmlBody = "";
+        elements.each(function (i, e) {
+            var _xml = $(e).find("#" + $(e).attr('id') + "-visualcsharp pre").text();
+            if (!$scope.snippets[i].isStatic) {
+                _xml = _xml.replace(/static /g, "");
+            }
+            _xml = _xml.replace(/, \)/g, ")");
+            xmlBody += _xml + "\n";
+
+            if (i == elements.length - 1) {
+                var xml = "<CodeSnippets xmlns=\"http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet\">\n";
+                xml += xmlBody;
+                xml += "</CodeSnippets>";
+                console.log(xml);
+                $("#vs-download").attr({ href: window.URL.createObjectURL(new Blob([xml])) });
+            }
+        });
+    };
+    $scope.reDownload = function () {
+        var elements = $('.snippet');
+        var xmlBody = "";
+        elements.each(function (i, e) {
+            var _xml = $(e).find("#" + $(e).attr('id') + "-resharper pre").text();
+            if (!$scope.snippets[i].isStatic) {
+                _xml = _xml.replace(/static /g, "");
+            }
+            _xml = _xml.replace(/, \)/g, ")");
+            xmlBody += _xml + "\n";
+
+            if (i == elements.length - 1) {
+                var xml = "<wpf:ResourceDictionary xml:space=\"preserve\" xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\" xmlns:s=\"clr-namespace:System;assembly=mscorlib\" xmlns:ss=\"urn:shemas-jetbrains-com:settings-storage-xaml\" xmlns:wpf=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">\n";
+                xml += xmlBody;
+                xml += "</wpf:ResourceDictionary>";
+                console.log(xml);
+                $("#re-download").attr({ href: window.URL.createObjectURL(new Blob([xml])) });
             }
         });
     };

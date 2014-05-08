@@ -13,54 +13,70 @@
 <body>
 
 <div class="container" ng-controller="snippetsCtrl">
-    <div class="col-md-9">
+<div class="col-md-9">
 
-        <div>
-            <h4>Unity.template.xml</h4>
-            <a class="btn btn-primary" id="temp-download" ng-click="download()" download="Unity.template.xml" href="">Download</a>
-            <br/><br/>
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Monodevelop Snippets</h4>
+            <a class="btn btn-primary" id="monodevelop-download" ng-click="monodevelopDownload()"
+               download="Unity.template.xml"
+               href="">Download</a>
         </div>
+        <div class="col-md-4">
+            <h4>Visual C# Snippets</h4>
+            <a class="btn btn-primary" id="vs-download" ng-click="vsDownload()" download="Unity.snippet"
+               href="">Download</a>
+        </div>
+        <div class="col-md-4">
+            <h4>ReSharper Live Templates</h4>
+            <a class="btn btn-primary" id="re-download" ng-click="reDownload()" download="UnityC#.DotSettings"
+               href="">Download</a>
+        </div>
+    </div>
+    <br/><br/>
 
-        <div class="panel panel-info snippet" ng-repeat="snippet in snippets" id="{{snippet.name}}">
-            <div class="panel-heading">
-                <h3 class="panel-title">{{snippet.name}}</h3>
-            </div>
-            <div class="panel-body">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#{{snippet.name}}-method" data-toggle="tab">Method</a></li>
-                    <li><a href="#{{snippet.name}}-xml" data-toggle="tab">XML</a></li>
-                </ul>
+    <div class="panel panel-info snippet" ng-repeat="snippet in snippets" id="{{snippet.name}}">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{snippet.name}}</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#{{snippet.name}}-method" data-toggle="tab">Method</a></li>
+                <li><a href="#{{snippet.name}}-monodevelop" data-toggle="tab">Monodevelop</a></li>
+                <li><a href="#{{snippet.name}}-visualcsharp" data-toggle="tab">Visual C#</a></li>
+                <li><a href="#{{snippet.name}}-resharper" data-toggle="tab">ReSharper</a></li>
+            </ul>
 
-                <div class="tab-content">
-                    <div class="tab-pane active" id="{{snippet.name}}-method">
+            <div class="tab-content">
+                <div class="tab-pane active" id="{{snippet.name}}-method">
 
-                        <div>
-                            <h3>Javascript</h3>
+                    <div>
+                        <h3>Javascript</h3>
                     <pre class="js"><span ng-show="{{snippet.isStatic}}">static </span>{{convertType("js",snippet.returnType)}} {{snippet.name}} (<span
                             ng-repeat="arg in snippet.args">{{arg.name}}: {{convertType("js",arg.type)}}<span
                             ng-hide="{{$last}}">, </span></span>){
     $selected$$end$
 }</pre>
-                        </div>
-                        <div>
-                            <h3>C#</h3>
+                    </div>
+                    <div>
+                        <h3>C#</h3>
                     <pre class="cs"><span ng-show="{{snippet.isStatic}}">static </span>{{snippet.returnType}} {{snippet.name}} (<span
                             ng-repeat="arg in snippet.args">{{arg.type}} {{arg.name}}<span
                             ng-hide="{{$last}}">, </span></span>){
     $selected$$end$
 }</pre>
-                        </div>
-                        <div>
-                            <h3>Boo</h3>
+                    </div>
+                    <div>
+                        <h3>Boo</h3>
                     <pre class="boo"><span ng-show="{{snippet.isStatic}}">static </span>def {{snippet.name}} (<span
                             ng-repeat="args in snippet.args">{{convertType("boo",args.type)}} {{args.name}}<span
                             ng-hide="{{$last}}">, </span></span>) as {{convertType("boo",snippet.returnType)}}:</pre>
-                        </div>
-
                     </div>
-                    <div class="tab-pane" id="{{snippet.name}}-xml">
-                        <div>
-                            <h3>Javascript</h3>
+
+                </div>
+                <div class="tab-pane" id="{{snippet.name}}-monodevelop">
+                    <div>
+                        <h3>Javascript</h3>
                     <pre class="js">&lt;CodeTemplate version="2.0"&gt;
     &lt;Header&gt;
       &lt;_Group&gt;UnityJS&lt;/_Group&gt;
@@ -81,9 +97,9 @@
     $selected$$end$
 }]]&gt;&lt;/Code&gt;
 &lt;/CodeTemplate&gt;</pre>
-                        </div>
-                        <div>
-                            <h3>C#</h3>
+                    </div>
+                    <div>
+                        <h3>C#</h3>
                     <pre class="cs">&lt;CodeTemplate version="2.0"&gt;
     &lt;Header&gt;
       &lt;_Group&gt;UnityC#&lt;/_Group&gt;
@@ -104,9 +120,9 @@
     $selected$$end$
 }]]&gt;&lt;/Code&gt;
 &lt;/CodeTemplate&gt;</pre>
-                        </div>
-                        <div>
-                            <h3>Boo</h3>
+                    </div>
+                    <div>
+                        <h3>Boo</h3>
                     <pre class="boo">&lt;CodeTemplate version="2.0"&gt;
     &lt;Header&gt;
       &lt;_Group&gt;UnityBoo&lt;/_Group&gt;
@@ -125,42 +141,92 @@
                                 ng-repeat="args in snippet.args">{{convertType("boo",args.type)}} $name{{$index}}$<span
                                 ng-hide="{{$last}}">, </span></span>) as {{convertType("boo",snippet.returnType)}}:]]&gt;&lt;/Code&gt;
 &lt;/CodeTemplate&gt;</pre>
-                        </div>
-
-
-
-
-
                     </div>
                 </div>
-
-
+                <div class="tab-pane" id="{{snippet.name}}-visualcsharp">
+                    <div>
+                        <h3>C#</h3>
+                            <pre class="cs">&lt;CodeSnippet Format="1.0.0"&gt;
+    &lt;Header&gt;
+      &lt;Title&gt;{{snippet.name}}&lt;/Title&gt;
+      &lt;Description&gt;Message&lt;/Description&gt;
+      &lt;SnippetTypes&gt;
+        &lt;SnippetType&gt;Expansion&lt;/SnippetType&gt;
+        &lt;SnippetType&gt;SurroundsWith&lt;/SnippetType&gt;
+      &lt;/SnippetTypes&gt;
+      &lt;Shortcut&gt;{{snippet.name}}&lt;/Shortcut&gt;
+    &lt;/Header&gt;
+    &lt;Snippet&gt;
+      <span ng-repeat="arg in snippet.args"><span
+              ng-show="$first">&lt;Declarations&gt;
+    </span>    &lt;Literal&gt;
+            &lt;ID&gt;name{{$index}}&lt;/ID&gt;
+            &lt;Default&gt;{{arg.name}}&lt;/Default&gt;
+        &lt;/Literal&gt;
+      <span ng-show="$last">&lt;/Declarations&gt;</span></span>
+      &lt;Code Language="csharp"&gt;&lt;![CDATA[<span ng-show="{{snippet.isStatic}}">static </span>{{snippet.returnType}} {{snippet.name}} (<span
+                                        ng-repeat="arg in snippet.args">{{arg.type}} $name{{$index}}$<span
+                                        ng-hide="{{$last}}">, </span></span>){
+    $selected$$end$
+}]]&gt;&lt;/Code&gt;
+    &lt;/Snippet&gt;
+&lt;/CodeSnippet&gt;</pre>
+                    </div>
+                </div>
+                <div class="tab-pane" id="{{snippet.name}}-resharper">
+                    <div>
+                        <h3>C#</h3>
+                        <pre class="cs">&lt;s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/@KeyIndexDefined"&gt;True&lt;/s:Boolean&gt;
+&lt;s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Shortcut/@EntryValue"&gt;{{snippet.name}}&lt;/s:String&gt;
+&lt;s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Description/@EntryValue"&gt;Message&lt;/s:String&gt;
+&lt;s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Text/@EntryValue"&gt;<span ng-show="{{snippet.isStatic}}">static </span>{{snippet.returnType}} {{snippet.name}} (<span
+                                    ng-repeat="arg in snippet.args">{{arg.type}} $name{{$index}}$<span
+                                    ng-hide="{{$last}}">, </span></span>){&#xD;
+    $END$&#xD;
+}&lt;/s:String&gt;
+&lt;s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Reformat/@EntryValue"&gt;True&lt;/s:Boolean&gt;
+&lt;s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/ShortenQualifiedReferences/@EntryValue"&gt;True&lt;/s:Boolean&gt;
+&lt;s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Categories/=UnityC_0023/@EntryIndexedValue"&gt;UnityC#&lt;/s:String&gt;
+&lt;s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Applicability/=Live/@EntryIndexedValue"&gt;True&lt;/s:Boolean&gt;
+&lt;s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Scope/=C3001E7C0DA78E4487072B7E050D86C5/@KeyIndexDefined"&gt;True&lt;/s:Boolean&gt;
+&lt;s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Scope/=C3001E7C0DA78E4487072B7E050D86C5/Type/@EntryValue"&gt;InCSharpFile&lt;/s:String&gt;
+&lt;s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Scope/=C3001E7C0DA78E4487072B7E050D86C5/CustomProperties/=minimumLanguageVersion/@EntryIndexedValue"&gt;2.0&lt;/s:String&gt;
+<span ng-repeat="arg in snippet.args">&lt;s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Field/=name{{$index}}/@KeyIndexDefined"&gt;True&lt;/s:Boolean&gt;
+&lt;s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Field/=name{{$index}}/Expression/@EntryValue"&gt;constant("{{arg.name}}")&lt;/s:String&gt;
+&lt;s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Field/=name{{$index}}/Order/@EntryValue"&gt;0&lt;/s:Int64&gt;</span>
+</pre>
+                    </div>
+                </div>
             </div>
+
+
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="sidenav affix pre-scrollable" style="max-height: 100%" role="complementary">
-            <ul class="nav">
-                <li>
-                    <a href="#UnityEngine">UnityEngine</a>
-                    <ul class="nav">
-                        <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEngine'}"><a
-                                href="#{{snippet.name}}">{{snippet.name}}</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#UnityEditor">UnityEditor</a>
-                    <ul class="nav">
-                        <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEditor'}"><a
-                                href="#{{snippet.name}}">{{snippet.name}}</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <a class="back-to-top" href="#">
-                Back to top
-            </a>
-        </div>
+</div>
+<div class="col-md-3">
+    <div class="sidenav affix pre-scrollable" style="max-height: 100%" role="complementary">
+        <ul class="nav">
+            <li>
+                <a href="#UnityEngine">UnityEngine</a>
+                <ul class="nav">
+                    <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEngine'}"><a
+                            href="#{{snippet.name}}">{{snippet.name}}</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#UnityEditor">UnityEditor</a>
+                <ul class="nav">
+                    <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEditor'}"><a
+                            href="#{{snippet.name}}">{{snippet.name}}</a></li>
+                </ul>
+            </li>
+
+        </ul>
+        <a class="back-to-top" href="#">
+            Back to top
+        </a>
     </div>
+</div>
 </div>
 
 </body>
