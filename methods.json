@@ -607,6 +607,258 @@
     },
     {
         "isStatic": false,
+        "namespace": "UnityEngine.EventSystems",
+        "name": "OnBeforeTransformParentChanged",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.EventSystems",
+        "name": "OnCanvasGroupChanged",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.EventSystems",
+        "name": "OnDidApplyAnimationProperties",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.EventSystems",
+        "name": "OnRectTransformDimensionsChange",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.EventSystems",
+        "name": "OnTransformParentChanged",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.EventSystems",
+        "name": "OnFillVBO",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "List<UIVertex>",
+                "name": "vbo"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.EventSystems",
+        "name": "OnRebuildRequested",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.EventSystems",
+        "name": "UpdateGeometry",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.EventSystems",
+        "name": "UpdateMaterial",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnPointerClick",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "PointerEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnPointerDown",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "PointerEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnPointerEnter",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "PointerEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnPointerExit",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "PointerEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnPointerUp",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "PointerEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnSubmit",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "BaseEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnUpdateSelected",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "BaseEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnBeforeSerialize",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnDeselect",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "BaseEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnDrag",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "PointerEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnSiblingGraphicEnabledDisabled",
+        "returnType": "void",
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnBeginDrag",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "PointerEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnEndDrag",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "PointerEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnScroll",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "PointerEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
+        "namespace": "UnityEngine.UI",
+        "name": "OnMove",
+        "returnType": "void",
+        "args": [
+            {
+                "type": "AxisEventData",
+                "name": "eventData"
+            }
+        ],
+        "guid": "74B014B0C739515DD6C937D84CBBFF6D"
+    },
+    {
+        "isStatic": false,
         "namespace": "UnityEditor",
         "name": "OnAssignMaterialModel",
         "returnType": "Material",

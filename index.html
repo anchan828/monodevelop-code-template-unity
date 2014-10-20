@@ -209,14 +209,29 @@
             <li>
                 <a href="#UnityEngine">UnityEngine</a>
                 <ul class="nav">
-                    <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEngine'}"><a
+                    <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEngine'}"ng-if="snippet.namespace=='UnityEngine'"><a
+                            href="#{{snippet.name}}">{{snippet.name}}</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#UnityEngine">UnityEngine.EventSystems</a>
+                <ul class="nav">
+                    <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEngine.EventSystems'}"ng-if="snippet.namespace=='UnityEngine.EventSystems'"><a
+                            href="#{{snippet.name}}">{{snippet.name}}</a></li>
+                </ul>
+            </li>
+            </li>
+            <li>
+                <a href="#UnityEngine">UnityEngine.UI</a>
+                <ul class="nav">
+                    <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEngine.UI'}"ng-if="snippet.namespace=='UnityEngine.UI'"><a
                             href="#{{snippet.name}}">{{snippet.name}}</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#UnityEditor">UnityEditor</a>
                 <ul class="nav">
-                    <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEditor'}"><a
+                    <li ng-repeat="snippet in snippets|filter:{namespace:'UnityEditor'}"ng-if="snippet.namespace=='UnityEditor'"><a
                             href="#{{snippet.name}}">{{snippet.name}}</a></li>
                 </ul>
             </li>
