@@ -16,20 +16,26 @@
 <div class="col-md-9">
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <h4>Monodevelop Snippets</h4>
             <a class="btn btn-primary" id="monodevelop-download" ng-click="monodevelopDownload()"
                download="Unity.template.xml"
                href="">Download</a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <h4>Visual C# Snippets</h4>
             <a class="btn btn-primary" id="vs-download" ng-click="vsDownload()" download="Unity.snippet"
                href="">Download</a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <h4>ReSharper Live Templates</h4>
             <a class="btn btn-primary" id="re-download" ng-click="reDownload()" download="UnityC#.DotSettings"
+               href="">Download</a>
+        </div>
+
+        <div class="col-md-3">
+            <h4>Sublime Text Snippets</h4>
+            <a class="btn btn-primary" id="st-download" ng-click="stDownload()" download="UnityC#.sublime-completions"
                href="">Download</a>
         </div>
     </div>
@@ -45,6 +51,7 @@
                 <li><a href="#{{snippet.name}}-monodevelop" data-toggle="tab">Monodevelop</a></li>
                 <li><a href="#{{snippet.name}}-visualcsharp" data-toggle="tab">Visual C#</a></li>
                 <li><a href="#{{snippet.name}}-resharper" data-toggle="tab">ReSharper</a></li>
+                <li><a href="#{{snippet.name}}-sublime" data-toggle="tab">Sublime Text</a></li>
             </ul>
 
             <div class="tab-content">
@@ -195,6 +202,17 @@
 &lt;s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Field/=name{{$index}}/Expression/@EntryValue"&gt;constant("{{arg.name}}")&lt;/s:String&gt;
 &lt;s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/={{snippet.guid}}/Field/=name{{$index}}/Order/@EntryValue"&gt;0&lt;/s:Int64&gt;</span>
 </pre>
+                    </div>
+                </div>
+                <div class="tab-pane" id="{{snippet.name}}-sublime">
+                    <div>
+                        <h3>C#</h3>
+                            <pre class="cs">{
+    "trigger": "{{snippet.name}}",
+    "contents":"<span ng-show="{{snippet.isStatic}}">static </span>{{snippet.returnType}} {{snippet.name}} (<span
+                                        ng-repeat="arg in snippet.args">{{arg.type}} $<code ng-non-bindable>{</code>{{$index+1}}:{{arg.name}}<code ng-non-bindable>}</code><span
+                                        ng-hide="{{$last}}">, </span></span>){\n\t$<code ng-non-bindable>{</code>{{snippet.args.length+1}}:{{arg.name}}<code ng-non-bindable>}</code>\n}"
+}</pre>
                     </div>
                 </div>
             </div>

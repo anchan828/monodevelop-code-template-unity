@@ -129,6 +129,29 @@ app.controller('snippetsCtrl', function ($scope, $http) {
             }
         })
     }
+
+    $scope.stDownload = function () {
+
+        var elements = $('.snippet');
+        var json = JSON.parse("{}");
+        json.completions = []
+        json.scope = "source.cs";
+        console.log(json);
+        elements.each(function (i, e) {
+            var _json = $(e).find("#" + $(e).attr('id') + "-sublime pre").text();
+            if (!$scope.snippets[i].isStatic) {
+                _json = _json.replace(/static /g, "")
+            }
+            _json = _json.replace(/, \)/g, ")");
+
+            json['completions'].push(JSON.parse(_json))
+
+            if (i == elements.length - 1) {
+                console.log(json)
+                $("#st-download").attr({href: window.URL.createObjectURL(new Blob([JSON.stringify(json)]))});
+            }
+        })
+    }
 });
 interface Window { URL:any;
 }
