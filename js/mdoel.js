@@ -1,10 +1,9 @@
 /**
-* Created by keigo on 2014/04/22.
-*/
+ * Created by keigo on 2014/04/22.
+ */
 var Message;
 (function (Message) {
     "use strict";
-
     var Method = (function () {
         function Method() {
             this.returnType = "void";
@@ -14,7 +13,6 @@ var Message;
         return Method;
     })();
     Message.Method = Method;
-
     var Argument = (function () {
         function Argument() {
             this.opt = "";

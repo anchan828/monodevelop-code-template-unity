@@ -6,21 +6,26 @@
 /// <reference path="angular.d.ts" />
 'use strict';
 var app = angular.module('snippets-viewer', []);
-app.controller('snippetsCtrl', function ($scope, $http) {
+app.controller('snippetsCtrl', function ($scope, $filter, $http) {
     $scope.snippets = [];
     $scope.xmlTemplate;
+    var uuid = function () {
+        var time = new Date().getTime(), sixteen = 16;
+        return "xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx".replace(/[xy]/g, function (match) {
+            var remainder = (time + sixteen * Math.random()) % sixteen | 0;
+            time = Math.floor(time / sixteen);
+            return (match == "x" ? remainder : remainder & 7 | 8).toString(sixteen);
+        });
+    };
     $http.get('methods.json').success(function (json) {
+        for (var i = 0; i < json.methods.length; i++) {
+            json.methods[i]["guid"] = uuid().toUpperCase();
+        }
         $scope.snippets = json.methods;
         setTimeout(function () {
             $('body').scrollspy({ target: '.sidenav' });
         }, 10);
     });
-    var uuid = function () {
-        var S4 = function () {
-            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-        };
-        return (S4() + S4() + S4() + S4() + S4() + S4() + S4() + S4());
-    };
     $scope.convertType = function (lang, type) {
         var result = type;
         if (!result) {
